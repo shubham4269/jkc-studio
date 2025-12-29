@@ -1,0 +1,563 @@
+/* -----------------------------------------
+   THEME COLORS
+----------------------------------------- */
+:root {
+  --bg: #0b1620;
+  --surface: #111b27;
+  --soft: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.15);
+  --text: #ffffff;
+}
+
+/* -----------------------------------------
+   PAGE
+----------------------------------------- */
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+}
+
+/* -----------------------------------------
+   CARD WRAPPER
+----------------------------------------- */
+.login-card {
+  width: 420px;
+  max-width: calc(100% - 32px);
+  background: var(--surface);
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+}
+
+/* -----------------------------------------
+   TOP HEADER SECTION (NAVBAR COLOR)
+----------------------------------------- */
+.login-header {
+  padding: 35px 20px 25px;
+  text-align: center;
+  background: linear-gradient(to bottom, #d6d3d1, #282f39);
+}
+
+.login-logo {
+  width: 110px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 12px rgba(255,255,180,0.4));
+}
+
+.login-header h1 {
+  color: var(--text);
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+/* -----------------------------------------
+   FORM SECTION
+----------------------------------------- */
+.login-body {
+  padding: 30px;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 6px;
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #dce1e8;
+}
+
+/* PREMIUM INPUT FIELD */
+.input {
+  width: 90%;
+  padding: 14px 16px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: var(--text);
+  transition: 0.25s ease;
+}
+
+.input::placeholder {
+  color: rgba(255,255,255,0.55);
+}
+
+.input:focus {
+  outline: none;
+  background: rgba(255,255,255,0.18);
+  border-color: #a597ff;
+  box-shadow: 0 0 0 4px rgba(165, 151, 255, 0.25);
+}
+
+/* -----------------------------------------
+   LOGIN BUTTON (Admin pages only)
+----------------------------------------- */
+.admin-page .cta-btn,
+.admin-card .cta-btn,
+.admin-form .cta-btn,
+.login-form .cta-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    #6b7ea0 0%,
+    #5a6f8f 45%,
+    #4a5f7c 100%
+  );
+  color: #ffffff;
+
+  transition: 0.25s ease;
+}
+
+.admin-page .cta-btn:hover,
+.admin-card .cta-btn:hover,
+.admin-form .cta-btn:hover,
+.login-form .cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+/* -----------------------------------------
+   ADMIN DASHBOARD LAYOUT RESTORE
+----------------------------------------- */
+
+.admin-layout {
+  /* Sidebar is fixed; main content will offset with left margin */
+  display: block;
+  min-height: 100vh;
+  background: #0b1620; /* dark premium background */
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #111b27;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* fixed sidebar so it stays visible while scrolling main content */
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  height: 100vh;
+  overflow: auto;
+  z-index: 1100;
+}
+
+/* Sidebar Logo */
+.sidebar-logo h2 {
+  color: white;
+  font-size: 20px;
+  margin: 0;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #6b7c93, transparent);
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1; /* pushes logout to bottom */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  background: #1c2533;
+  text-decoration: none;
+  color: #dcdcdc;
+  transition: 0.25s ease;
+  font-size: 15px;
+}
+
+.menu-item:hover {
+  background: #273244;
+  transform: translateX(4px);
+}
+
+.menu-item.active {
+  background: #3a4b60;
+}
+
+/* ICONS */
+.menu-icon {
+  font-size: 18px;
+}
+
+/* LOGOUT BUTTON */
+.logout-section {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.logout-btn {
+  background: #2b1316;
+  color: #ff6b6b;
+  font-weight: 600;
+  border: 1px solid rgba(255, 70, 70, 0.3);
+}
+
+.logout-btn:hover {
+  background: #3a161a;
+}
+
+/* MAIN CONTENT */
+.main {
+  background: #0b1620;
+  padding: 26px 34px;
+  color: white;
+  /* offset main content so it doesn't sit underneath the fixed sidebar */
+  margin-left: 300px; /* a bit wider to allow breathing room */
+}
+
+/* For narrower viewports, restore stacked layout */
+@media (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .menu-item {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .logout-section {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    padding: 20px;
+  }
+  
+  .login-card {
+    width: 100%;
+    border-radius: 18px;
+  }
+  
+  .login-header {
+    padding: 28px 16px 20px;
+  }
+  
+  .login-logo {
+    width: 90px;
+  }
+  
+  .login-header h1 {
+    font-size: 20px;
+  }
+  
+  .login-body {
+    padding: 24px 20px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  
+  .sidebar {
+    padding: 20px 16px;
+    gap: 20px;
+  }
+  
+  .sidebar-logo h2 {
+    font-size: 18px;
+  }
+  
+  .main {
+    padding: 18px 16px;
+  }
+  
+  .page-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+  
+  .settings-card {
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-header {
+    padding: 24px 14px 18px;
+  }
+  
+  .login-logo {
+    width: 80px;
+  }
+  
+  .login-header h1 {
+    font-size: 18px;
+  }
+  
+  .login-body {
+    padding: 20px 16px;
+  }
+  
+  .input-label {
+    font-size: 13px;
+  }
+  
+  .input {
+    padding: 11px 12px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+  
+  .admin-page .cta-btn,
+  .admin-card .cta-btn,
+  .admin-form .cta-btn,
+  .login-form .cta-btn {
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+  
+  .sidebar {
+    padding: 16px 14px;
+    gap: 16px;
+  }
+  
+  .sidebar-logo {
+    gap: 10px;
+  }
+  
+  .sidebar-logo h2 {
+    font-size: 16px;
+  }
+  
+  .logo-mark {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .menu {
+    gap: 6px;
+  }
+  
+  .menu-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    gap: 8px;
+    border-radius: 10px;
+  }
+  
+  .menu-icon {
+    font-size: 16px;
+  }
+  
+  .main {
+    padding: 16px 14px;
+  }
+  
+  .page-title {
+    font-size: 20px;
+  }
+  
+  .settings-card {
+    padding: 16px;
+    font-size: 15px;
+  }
+}
+
+/* TOP TITLE */
+.page-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* WELCOME CARD */
+.settings-card {
+  background: #111b27;
+  padding: 26px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 20px;
+}
+
+/* --------------------------
+   Dashboard stats widgets
+   -------------------------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.stat-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(17,27,39,0.85), rgba(12,20,30,0.85));
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.04);
+  font-size: 20px;
+  color: #bfc8ff;
+}
+
+.stat-value {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.stat-label {
+  margin: 0;
+  color: rgba(255,255,255,0.65);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+@media (max-width: 980px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Leads table */
+.table-wrap {
+  margin-top: 22px;
+  background: #07101888;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #e7eefc;
+}
+
+.leads-table thead th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.leads-table tbody td {
+  padding: 12px 14px;
+  vertical-align: top;
+  border-bottom: 1px dotted rgba(255,255,255,0.03);
+}
+
+.lead-message {
+  max-width: 420px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions { display:flex; gap:8px; align-items:center; }
+.icon-btn { background: transparent; border: 1px solid rgba(255,255,255,0.04); padding:6px 8px; border-radius:8px; color: #dfe8ff; cursor:pointer; }
+.icon-btn.danger { border-color: rgba(255,80,80,0.22); color: #ffbcbc }
+
+@media (max-width: 900px) {
+  .leads-table thead th:nth-child(4),
+  .leads-table thead th:nth-child(5),
+  .leads-table thead th:nth-child(6) {
+    display: none;
+  }
+  .leads-table tbody td:nth-child(4),
+  .leads-table tbody td:nth-child(5),
+  .leads-table tbody td:nth-child(6) {
+    display: none;
+  }
+}
+
+/* Modal view for lead details */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,12,0.6);
+  display: grid;
+  place-items: center;
+  z-index: 2000;
+}
+
+.modal-box {
+  background: linear-gradient(180deg, #0f1824, #07121a);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 22px;
+  border-radius: 12px;
+  width: min(760px, 92%);
+  color: #eaf0ff;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.6);
+}
+
+.modal-box p { margin: 8px 0; color: rgba(235,245,255,0.9); }

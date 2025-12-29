@@ -1,0 +1,381 @@
+/* Services admin page styles (inherits theme vars from src/css/admin.css) */
+
+.admin-page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.admin-add-btn {
+  width: auto !important;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.admin-back-btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.admin-back-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.admin-card {
+  background: var(--surface);
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* Service form specific layout tweaks */
+.service-form {
+  gap: 12px;
+}
+
+.service-form input,
+.service-form select,
+.service-form textarea {
+  box-sizing: border-box;
+}
+
+/* Make controls feel aligned (same visual height) */
+.service-form input,
+.service-form select {
+  min-height: 46px;
+}
+
+.service-form textarea {
+  min-height: 110px;
+}
+
+.admin-card h2 {
+  grid-column: 1 / -1;
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* Default field sizing */
+.admin-card input,
+.admin-card select {
+  grid-column: span 6;
+}
+
+.admin-card textarea {
+  grid-column: 1 / -1;
+  min-height: 90px;
+}
+
+.admin-card select[name="category"] {
+  grid-column: span 6;
+}
+
+/* Hero Image Section - Full Width */
+.hero-image-section {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-image-section label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 4px;
+}
+
+.hero-image-section input {
+  width: 100%;
+}
+
+.hero-preview {
+  margin-top: 8px;
+}
+
+.hero-preview img {
+  max-width: 200px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* Keep the form balanced: timeline + pricing side-by-side on desktop */
+.service-form textarea[name="deliveryTimeline"],
+.service-form textarea[name="pricing"] {
+  grid-column: span 6;
+}
+
+.service-form textarea[name="deliveryTimeline"],
+.service-form textarea[name="pricing"] {
+  min-height: 120px;
+}
+
+/* Make native dropdown options readable (prevents white-on-white menus) */
+.admin-card select {
+  color-scheme: dark;
+}
+
+.admin-card select option,
+.admin-card select optgroup {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.admin-card input[name="categoryLabel"] {
+  grid-column: span 8;
+}
+
+.admin-card input,
+.admin-card textarea,
+.admin-card select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--soft);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.admin-card input::placeholder,
+.admin-card textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.admin-card input:focus,
+.admin-card textarea:focus,
+.admin-card select:focus {
+  border-color: rgba(165, 151, 255, 0.55);
+  box-shadow: 0 0 0 4px rgba(165, 151, 255, 0.18);
+}
+
+.admin-card h4 {
+  grid-column: 1 / -1;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.faq-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.service-form .faq-row input {
+  grid-column: auto;
+}
+
+.checkbox {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+}
+
+.admin-card button[type="button"] {
+  grid-column: 1 / -1;
+  justify-self: start;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-card button[type="button"]:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.admin-card .cta-btn {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+}
+
+/* ------------------------------
+   Premium Process UI
+------------------------------ */
+
+.admin-card .process-row {
+  grid-column: 1 / -1;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.admin-card .process-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.admin-card .process-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  flex: 0 0 auto;
+}
+
+.admin-card .process-head-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.admin-card .process-head-title {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.2;
+}
+
+.admin-card .process-head-sub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 2px;
+}
+
+.admin-card .process-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.admin-card .process-fields input,
+.admin-card .process-fields textarea {
+  grid-column: 1 / -1;
+}
+
+.admin-card .process-fields textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.admin-card .danger-btn {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 107, 107, 0.35);
+  background: rgba(255, 107, 107, 0.10);
+  color: rgba(255, 220, 220, 0.95);
+  font-weight: 800;
+  cursor: pointer;
+  justify-self: end;
+}
+
+.admin-card .danger-btn:hover {
+  background: rgba(255, 107, 107, 0.16);
+}
+
+.admin-card .admin-add-row {
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.admin-services-page .admin-table {
+  margin-top: 20px;
+  background: var(--surface);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: grid;
+  gap: 0;
+}
+
+.admin-services-page .admin-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 220px;
+  padding: 14px 16px;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.admin-services-page .admin-head {
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.admin-services-page .admin-row:last-child {
+  border-bottom: none;
+}
+
+.admin-services-page .admin-row button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-services-page .admin-row button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.danger {
+  background: #ff5555;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .admin-card {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-card input,
+  .admin-card select,
+  .admin-card textarea {
+    grid-column: 1 / -1;
+  }
+
+  .service-form textarea[name="deliveryTimeline"],
+  .service-form textarea[name="pricing"] {
+    grid-column: 1 / -1;
+  }
+
+  .admin-services-page .admin-row {
+    grid-template-columns: 1fr;
+  }
+}

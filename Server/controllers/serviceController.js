@@ -1,4 +1,4 @@
-import Service from "../models/serviceModel.js";
+import Service from "../Models/serviceModel.js";
 
 const normalizeText = (value) => (typeof value === "string" ? value.trim() : "");
 

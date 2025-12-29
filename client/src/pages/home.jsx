@@ -159,10 +159,10 @@ const Home = () => {
         data-aos-delay="100"
       >
        <div className="about-slideshow">
-  <img src="/images/jkc1.jpg" alt="Brand Work 1" />
-  <img src="/images/jkc2.jpg" alt="Brand Work 2" />
-  <img src="/images/jkc3.jpg" alt="Brand Work 3" />
-  <img src="/images/jkc4.jpg" alt="Brand Work 4" />
+  <img src="/Images/jkc1.jpg" alt="Brand Work 1" />
+  <img src="/Images/jkc2.jpg" alt="Brand Work 2" />
+  <img src="/Images/jkc3.jpg" alt="Brand Work 3" />
+  <img src="/Images/jkc4.jpg" alt="Brand Work 4" />
 </div>
 
       </div>
